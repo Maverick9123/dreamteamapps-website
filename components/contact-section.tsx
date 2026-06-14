@@ -1,4 +1,4 @@
-"use client"
+   "use client"
 
 import { useState, useRef, useEffect } from "react"
 import { motion } from "framer-motion"
@@ -354,33 +354,44 @@ export function ContactSection() {
               // or need app support? We&apos;ve got you.
             </p>
             <div className="space-y-5">
-              <div className="flex items-center gap-4">
-                <div className="w-10 h-10 rounded-none bg-green-500/10 border border-green-500/20 flex items-center justify-center shrink-0">
+              <a
+                href="https://www.dreamteamapps.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-4 group"
+              >
+                <div className="w-10 h-10 rounded-none bg-green-500/10 border border-green-500/20 flex items-center justify-center shrink-0 group-hover:bg-green-500/20 transition-colors">
                   <Globe className="w-4 h-4 text-green-400" />
                 </div>
                 <div>
                   <div className="text-gray-500 text-xs font-mono">// Website</div>
-                  <div className="text-white font-mono text-sm font-medium">www.DreamTeamApps.com</div>
+                  <div className="text-white font-mono text-sm font-medium group-hover:text-green-400 transition-colors">www.DreamTeamApps.com</div>
                 </div>
-              </div>
-              <div className="flex items-center gap-4">
-                <div className="w-10 h-10 rounded-none bg-green-500/10 border border-green-500/20 flex items-center justify-center shrink-0">
+              </a>
+              <a
+                href="mailto:btwynn@bellsouth.net"
+                className="flex items-center gap-4 group"
+              >
+                <div className="w-10 h-10 rounded-none bg-green-500/10 border border-green-500/20 flex items-center justify-center shrink-0 group-hover:bg-green-500/20 transition-colors">
                   <Mail className="w-4 h-4 text-green-400" />
                 </div>
                 <div>
                   <div className="text-gray-500 text-xs font-mono">// General Inquiries</div>
-                  <div className="text-white font-mono text-sm font-medium">btwynn@bellsouth.net</div>
+                  <div className="text-white font-mono text-sm font-medium group-hover:text-green-400 transition-colors">btwynn@bellsouth.net</div>
                 </div>
-              </div>
-              <div className="flex items-center gap-4">
-                <div className="w-10 h-10 rounded-none bg-green-500/10 border border-green-500/20 flex items-center justify-center shrink-0">
+              </a>
+              <button
+                onClick={() => setActiveTab("chat")}
+                className="flex items-center gap-4 group w-full text-left"
+              >
+                <div className="w-10 h-10 rounded-none bg-green-500/10 border border-green-500/20 flex items-center justify-center shrink-0 group-hover:bg-green-500/20 transition-colors">
                   <MessageSquare className="w-4 h-4 text-green-400" />
                 </div>
                 <div>
                   <div className="text-gray-500 text-xs font-mono">// AI Support</div>
-                  <div className="text-white font-mono text-sm font-medium">Chat or submit a ticket →</div>
+                  <div className="text-white font-mono text-sm font-medium group-hover:text-green-400 transition-colors">Chat or submit a ticket →</div>
                 </div>
-              </div>
+              </button>
             </div>
           </motion.div>
 
