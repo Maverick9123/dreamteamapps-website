@@ -25,9 +25,9 @@ export function SupportSection() {
           <p className="text-gray-400 text-lg max-w-2xl mx-auto">
             Real support for real users. Submit a ticket and our team will get back to you fast.
           </p>
-        </motion.div>
+        </motion.div>*
 
-        {/* Support Cards */}
+*{/* Support Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           {/* Support Desk Card */}
           <motion.div
@@ -52,12 +52,15 @@ export function SupportSection() {
                 </div>
               ))}
             </div>
-            <Button className="w-full bg-teal-500 hover:bg-teal-400 text-white border-0 font-semibold">
+            <Button
+              className="w-full bg-teal-500 hover:bg-teal-400 text-white border-0 font-semibold"
+              onClick={() => window.open("https://app-support-desk-three.vercel.app", "_blank")}
+            >
               Open Support Ticket <ExternalLink className="ml-2 w-4 h-4" />
             </Button>
-          </motion.div>
+          </motion.div>*
 
-          {/* Email Card */}
+*{/* Email Card */}
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -76,21 +79,3 @@ export function SupportSection() {
               <div className="bg-white/5 rounded-lg p-3">
                 <div className="text-gray-500 text-xs mb-1">FishingPalPro Support</div>
                 <div className="text-teal-300 text-sm font-medium">support@fishingpalpro.com</div>
-              </div>
-              <div className="bg-white/5 rounded-lg p-3">
-                <div className="text-gray-500 text-xs mb-1">PlayListAI Support</div>
-                <div className="text-teal-300 text-sm font-medium">support@dreamteamapps.com</div>
-              </div>
-            </div>
-            <Button
-              variant="outline"
-              className="w-full border-teal-500/30 text-teal-300 hover:bg-teal-500/10 hover:text-teal-200"
-            >
-              Send an Email <Mail className="ml-2 w-4 h-4" />
-            </Button>
-          </motion.div>
-        </div>
-      </div>
-    </section>
-  )
-}
