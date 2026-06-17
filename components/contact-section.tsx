@@ -1,4 +1,4 @@
-   "use client"
+"use client"
 
 import { useState, useRef, useEffect } from "react"
 import { motion } from "framer-motion"
@@ -18,7 +18,7 @@ function AIChatTab() {
   const [messages, setMessages] = useState<ChatMessage[]>([
     {
       role: "assistant",
-      content: "Hi! I'm the DreamTeamApps AI support assistant. Ask me anything about FishingPalPro or PlayListAI — I'm here to help! 🎣🎵",
+      content: "Hi! I'm the DreamTeamApps AI support assistant. Ask me anything about FishingPalPro or PlayListAI â€” I'm here to help! ðŸŽ£ðŸŽµ",
     },
   ])
   const [input, setInput] = useState("")
@@ -107,7 +107,7 @@ function AIChatTab() {
           onClick={() => setEscalated(false)}
           className="mt-4 text-green-900 font-mono text-xs hover:text-green-700"
         >
-          ← Back to chat
+          â† Back to chat
         </button>
       </div>
     )
@@ -242,7 +242,7 @@ function TicketFormTab() {
           onClick={() => { setSubmitted(false); setForm({ customerName: "", customerEmail: "", app: "", category: "", subject: "", description: "" }) }}
           className="mt-4 text-green-900 font-mono text-xs hover:text-green-700"
         >
-          ← Submit another
+          â† Submit another
         </button>
       </div>
     )
@@ -280,8 +280,8 @@ function TicketFormTab() {
               <select name="app" value={form.app} onChange={handleChange}
                 className="w-full bg-black/40 border border-green-500/20 text-white font-mono text-xs pl-7 pr-2 py-2 focus:outline-none focus:border-green-500/50 appearance-none">
                 <option value="" className="bg-black">Select app...</option>
-                <option value="FishingPalPro" className="bg-black">🎣 FishingPalPro</option>
-                <option value="PlayListAI" className="bg-black">🎵 PlayListAI</option>
+                <option value="FishingPalPro" className="bg-black">ðŸŽ£ FishingPalPro</option>
+                <option value="PlayListAI" className="bg-black">ðŸŽµ PlayListAI</option>
               </select>
             </div>
           </div>
@@ -290,11 +290,11 @@ function TicketFormTab() {
             <select name="category" value={form.category} onChange={handleChange}
               className="w-full bg-black/40 border border-green-500/20 text-white font-mono text-xs px-2 py-2 focus:outline-none focus:border-green-500/50 appearance-none">
               <option value="" className="bg-black">Category...</option>
-              <option value="bug" className="bg-black">🐛 Bug</option>
-              <option value="crash" className="bg-black">💥 Crash</option>
-              <option value="purchase_issue" className="bg-black">💳 Purchase</option>
-              <option value="feature_request" className="bg-black">💡 Feature request</option>
-              <option value="other" className="bg-black">❓ Other</option>
+              <option value="bug" className="bg-black">ðŸ› Bug</option>
+              <option value="crash" className="bg-black">ðŸ’¥ Crash</option>
+              <option value="purchase_issue" className="bg-black">ðŸ’³ Purchase</option>
+              <option value="feature_request" className="bg-black">ðŸ’¡ Feature request</option>
+              <option value="other" className="bg-black">â“ Other</option>
             </select>
           </div>
         </div>
@@ -389,7 +389,7 @@ export function ContactSection() {
                 </div>
                 <div>
                   <div className="text-gray-500 text-xs font-mono">// AI Support</div>
-                  <div className="text-white font-mono text-sm font-medium group-hover:text-green-400 transition-colors">Chat or submit a ticket →</div>
+                  <div className="text-white font-mono text-sm font-medium group-hover:text-green-400 transition-colors">Chat or submit a ticket â†’</div>
                 </div>
               </button>
             </div>
