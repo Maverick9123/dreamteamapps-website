@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { ExternalLink, Terminal, Code, Mic } from "lucide-react"
+import { ExternalLink, Terminal, Code, Mic, Search, Headphones } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 
@@ -38,6 +38,23 @@ const apps = [
     status: "ONLINE",
     features: ["Neural Playlist Engine", "Apple Music + Spotify", "Siri Voice Commands", "Offline Playback", "Genre Matrix"],
     appStoreUrl: "https://apps.apple.com/app/id6779980469",
+    code: "v1.0.1",
+  },
+  {
+    id: "sleuthpro",
+    name: "SleuthPro",
+    tagline: "People Search. Powered by Intelligence.",
+    description: "Instant people search using public records and licensed data. Search by name, phone, email, or address. Deep Dive reports unlock law-enforcement-grade background data with Siri voice commands.",
+    emoji: "🔍",
+    icon: Search,
+    glowColor: "rgba(59,130,246,0.3)",
+    borderColor: "border-blue-500/40",
+    accentColor: "text-blue-400",
+    badgeBg: "bg-blue-500/15 text-blue-300 border-blue-500/30",
+    badge: "PENDING REVIEW",
+    status: "PENDING",
+    features: ["Name / Phone / Email / Address Search", "Deep Dive Reports", "Siri Voice Commands", "Reports Vault", "Alerts & Monitoring"],
+    appStoreUrl: null,
     code: "v1.0.0",
   },
   {
@@ -56,6 +73,23 @@ const apps = [
     features: ["Siri Voice Dictation", "Smart Grocery Lists", "Appointment Scheduling", "Daily Reminders", "Family Sharing"],
     appStoreUrl: null,
     code: "v0.1.0",
+  },
+  {
+    id: "appsupportdesk",
+    name: "AppSupport Desk",
+    tagline: "Helpdesk Built for App Developers",
+    description: "Commercial support ticket system designed for indie iOS app developers. Track, triage, and resolve customer issues across your entire app portfolio — from a single unified dashboard.",
+    emoji: "🎧",
+    icon: Headphones,
+    glowColor: "rgba(251,146,60,0.3)",
+    borderColor: "border-orange-500/40",
+    accentColor: "text-orange-400",
+    badgeBg: "bg-orange-500/15 text-orange-300 border-orange-500/30",
+    badge: "IN DEVELOPMENT",
+    status: "OFFLINE",
+    features: ["Multi-App Ticket Routing", "Priority Triage Queue", "Team Collaboration", "Customer Reply Threads", "Analytics Dashboard"],
+    appStoreUrl: null,
+    code: "v0.2.0",
   },
 ]
 
@@ -92,15 +126,15 @@ export function AppsSection() {
           </p>
         </motion.div>
 
-        {/* App Cards */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        {/* App Cards — 2-col on lg, 1-col on mobile, centered last row */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6">
           {apps.map((app, index) => (
             <motion.div
               key={app.id}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: index * 0.15 }}
+              transition={{ delay: index * 0.12 }}
               className={`relative bg-black/80 border ${app.borderColor} rounded-none cyber-card overflow-hidden flex flex-col group transition-all duration-300`}
               onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.boxShadow = `0 0 30px ${app.glowColor}, 0 0 60px ${app.glowColor.replace('0.3', '0.1').replace('0.2', '0.05')}`; }}
               onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.boxShadow = `none`; }}
@@ -146,9 +180,33 @@ export function AppsSection() {
                 {/* Status + CTA */}
                 <div className="flex items-center justify-between pt-4 border-t border-green-500/10">
                   <div className="flex items-center gap-2 font-mono text-xs">
-                    <div className={`w-2 h-2 rounded-full ${app.status === 'ONLINE' ? 'bg-green-400' : 'bg-yellow-500'}`}
-                      style={app.status === 'ONLINE' ? { boxShadow: '0 0 6px rgba(0,255,65,0.8)' } : { boxShadow: '0 0 6px rgba(234,179,8,0.8)' }} />
-                    <span className={app.status === 'ONLINE' ? 'text-green-500' : 'text-yellow-600'}>{app.status}</span>
+                    <div
+                      className={`w-2 h-2 rounded-full ${
+                        app.status === "ONLINE"
+                          ? "bg-green-400"
+                          : app.status === "PENDING"
+                          ? "bg-blue-400"
+                          : "bg-yellow-500"
+                      }`}
+                      style={
+                        app.status === "ONLINE"
+                          ? { boxShadow: "0 0 6px rgba(0,255,65,0.8)" }
+                          : app.status === "PENDING"
+                          ? { boxShadow: "0 0 6px rgba(59,130,246,0.8)" }
+                          : { boxShadow: "0 0 6px rgba(234,179,8,0.8)" }
+                      }
+                    />
+                    <span
+                      className={
+                        app.status === "ONLINE"
+                          ? "text-green-500"
+                          : app.status === "PENDING"
+                          ? "text-blue-400"
+                          : "text-yellow-600"
+                      }
+                    >
+                      {app.status}
+                    </span>
                   </div>
                   {app.appStoreUrl ? (
                     <Button
