@@ -20,7 +20,7 @@ const apps = [
     badge: "LIVE // App Store",
     status: "ONLINE",
     features: ["Lunar Phase Engine", "Real-Time Weather API", "GPS Catch Logger", "Siri Voice Control", "Fishing Calendar"],
-    appStoreUrl: "#",
+    appStoreUrl: "https://apps.apple.com/app/id6777416041",
     code: "v1.0.0",
   },
   {
@@ -37,7 +37,7 @@ const apps = [
     badge: "LIVE // App Store",
     status: "ONLINE",
     features: ["Neural Playlist Engine", "Apple Music + Spotify", "Siri Voice Commands", "Offline Playback", "Genre Matrix"],
-    appStoreUrl: "#",
+    appStoreUrl: "https://apps.apple.com/app/id6779980469",
     code: "v1.0.0",
   },
   {
@@ -153,9 +153,12 @@ export function AppsSection() {
                   {app.appStoreUrl ? (
                     <Button
                       size="sm"
+                      asChild
                       className={`bg-transparent hover:bg-green-500/10 ${app.accentColor} border border-current rounded-none font-mono text-xs uppercase tracking-wider`}
                     >
-                      App Store <ExternalLink className="ml-1.5 w-3 h-3" />
+                      <a href={app.appStoreUrl} target="_blank" rel="noopener noreferrer">
+                        App Store <ExternalLink className="ml-1.5 w-3 h-3" />
+                      </a>
                     </Button>
                   ) : (
                     <Button
