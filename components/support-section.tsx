@@ -51,7 +51,7 @@ export function SupportSection() {
             </div>
             <Button
               className="w-full bg-teal-500 hover:bg-teal-400 text-white border-0 font-semibold"
-              onClick={() => window.open("https://app-support-desk-three.vercel.app", "_blank")}
+              onClick={() => window.open("https://app-support-desk-three.vercel.app/portal", "_blank")}
             >
               Open Support Ticket <ExternalLink className="ml-2 w-4 h-4" />
             </Button>
@@ -78,6 +78,10 @@ export function SupportSection() {
               </div>
               <div className="bg-white/5 rounded-lg p-3">
                 <div className="text-gray-500 text-xs mb-1">PlayListAI Support</div>
+                <div className="text-teal-300 text-sm font-medium">support@dreamteamapps.com</div>
+              </div>
+              <div className="bg-white/5 rounded-lg p-3">
+                <div className="text-gray-500 text-xs mb-1">SleuthPro Support</div>
                 <div className="text-teal-300 text-sm font-medium">support@dreamteamapps.com</div>
               </div>
             </div>
