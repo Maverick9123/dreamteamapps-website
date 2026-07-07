@@ -18,7 +18,7 @@ function AIChatTab() {
   const [messages, setMessages] = useState<ChatMessage[]>([
     {
       role: "assistant",
-      content: "Hi! I'm the DreamTeamApps AI support assistant. Ask me anything about FishingPalPro or PlayListAI â€” I'm here to help! ðŸŽ£ðŸŽµ",
+      content: "Hi! I'm the DreamTeamApps AI support assistant. Ask me anything about FishingPalPro, PlayListAI, or SkinGuardAI — I'm here to help! 🎣🎵",
     },
   ])
   const [input, setInput] = useState("")
@@ -163,7 +163,7 @@ function AIChatTab() {
           value={input}
           onChange={e => setInput(e.target.value)}
           onKeyDown={handleKeyDown}
-          placeholder="// Ask about FishingPalPro or PlayListAI..."
+          placeholder="// Ask about FishingPalPro, PlayListAI, or SkinGuardAI..."
           disabled={loading}
           className="flex-1 bg-black/40 border border-green-500/20 text-white font-mono text-xs px-3 py-2 focus:outline-none focus:border-green-500/50 placeholder-green-900 disabled:opacity-50"
         />
@@ -280,8 +280,9 @@ function TicketFormTab() {
               <select name="app" value={form.app} onChange={handleChange}
                 className="w-full bg-black/40 border border-green-500/20 text-white font-mono text-xs pl-7 pr-2 py-2 focus:outline-none focus:border-green-500/50 appearance-none">
                 <option value="" className="bg-black">Select app...</option>
-                <option value="FishingPalPro" className="bg-black">ðŸŽ£ FishingPalPro</option>
-                <option value="PlayListAI" className="bg-black">ðŸŽµ PlayListAI</option>
+                <option value="FishingPalPro" className="bg-black">🎣 FishingPalPro</option>
+                <option value="PlayListAI" className="bg-black">🎵 PlayListAI</option>
+                <option value="SkinGuardAI" className="bg-black">🛡️ SkinGuardAI</option>
               </select>
             </div>
           </div>

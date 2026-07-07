@@ -10,6 +10,7 @@ export function Footer() {
   const apps = [
     { name: "FishingPalPro", href: "/#apps" },
     { name: "PlayListAI", href: "/#apps" },
+    { name: "SkinGuardAI", href: "/#apps" },
     { name: "SiriNotes Pro", href: "/#apps" },
   ]
 

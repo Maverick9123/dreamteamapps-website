@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { ExternalLink, Terminal, Code, Mic, Search, Headphones } from "lucide-react"
+import { ExternalLink, Terminal, Code, Mic, Search, ShieldCheck, Headphones } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 
@@ -39,6 +39,23 @@ const apps = [
     features: ["Neural Playlist Engine", "Apple Music + Spotify", "Siri Voice Commands", "Offline Playback", "Genre Matrix"],
     appStoreUrl: "https://apps.apple.com/app/id6779980469",
     code: "v1.0.1",
+  },
+  {
+    id: "skinguardai",
+    name: "SkinGuardAI",
+    tagline: "AI Skin-Health Guardian",
+    description: "Photograph a mole or skin spot for an instant AI risk assessment. Track changes over time on a visual body map, get self-exam reminders and UV alerts, and export PDF reports to share with your dermatologist.",
+    emoji: "🛡️",
+    icon: ShieldCheck,
+    glowColor: "rgba(0,212,200,0.3)",
+    borderColor: "border-cyan-500/40",
+    accentColor: "text-cyan-400",
+    badgeBg: "bg-cyan-500/15 text-cyan-300 border-cyan-500/30",
+    badge: "LIVE // App Store",
+    status: "ONLINE",
+    features: ["AI Mole Risk Analysis", "Visual Body Map", "Scan History & Comparison", "UV Index Alerts", "PDF Doctor Reports"],
+    appStoreUrl: "https://apps.apple.com/app/id6785322449",
+    code: "v1.0.0",
   },
   {
     id: "sleuthpro",
