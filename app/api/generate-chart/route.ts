@@ -34,6 +34,20 @@ IMPORTANT:
 
 export async function POST(request: Request) {
   try {
+    // Shared-secret guard: only requests carrying the matching key are served.
+    // Enforced only when GIGSTAND_API_SECRET is configured on the server, so the
+    // endpoint never breaks before the environment variable is set.
+    const requiredSecret = process.env.GIGSTAND_API_SECRET
+    if (requiredSecret) {
+      const provided = request.headers.get('x-gigstand-key')
+      if (provided !== requiredSecret) {
+        return new Response(JSON.stringify({ error: 'Unauthorized.' }), {
+          status: 401,
+          headers: { 'Content-Type': 'application/json' },
+        })
+      }
+    }
+
     const body = await request.json()
     const lyrics: string = (body?.lyrics ?? '').toString()
     const chords: string = (body?.chords ?? '').toString()
