@@ -38,23 +38,18 @@ export function Hero() {
           initial={{ opacity: 0, scale: 0.85 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, delay: 0.1 }}
-          className="flex flex-col items-center mb-6"
+          className="flex justify-center mb-8"
         >
+          <h1 className="sr-only">Dream Team Apps LLC — On Demand Dream App Creations</h1>
           <Image
-            src="https://galaxy-prod.tlcdn.com/gen/user_33ij5Gxezez5LoutRhuzSKmJeV9/d1504e15-6c07-4b1b-97b4-50ca248ffbfb.png"
-            alt="DreamTeam Apps Logo"
-            width={200}
-            height={200}
-            className="rounded-2xl mb-4"
-            style={{ boxShadow: "0 0 40px rgba(0,200,100,0.25), 0 0 80px rgba(0,200,100,0.1)" }}
+            src="/dta-banner.jpg"
+            alt="Dream Team Apps LLC — On Demand Dream App Creations — Start Here!"
+            width={1920}
+            height={960}
+            className="w-full max-w-4xl h-auto rounded-xl"
+            style={{ boxShadow: "0 0 60px rgba(90,120,255,0.28), 0 0 130px rgba(140,90,255,0.16)" }}
             priority
           />
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-widest font-mono uppercase">
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 via-teal-300 to-green-400 neon-green">
-              DreamTeam
-            </span>
-            <span className="text-white"> Apps</span>
-          </h1>
         </motion.div>
 
         {/* Subheadline */}
