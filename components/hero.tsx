@@ -41,15 +41,25 @@ export function Hero() {
           className="flex justify-center mb-8"
         >
           <h1 className="sr-only">Dream Team Apps LLC — On Demand Dream App Creations</h1>
-          <Image
-            src="/dta-banner.jpg"
-            alt="Dream Team Apps LLC — On Demand Dream App Creations — Start Here!"
-            width={1920}
-            height={960}
-            className="w-full max-w-4xl h-auto rounded-xl"
-            style={{ boxShadow: "0 0 60px rgba(90,120,255,0.28), 0 0 130px rgba(140,90,255,0.16)" }}
-            priority
-          />
+          <div className="relative w-full max-w-4xl">
+            {/* Green backlight — glows from behind the banner */}
+            <div
+              aria-hidden="true"
+              className="absolute -inset-4 rounded-3xl bg-green-500/30 blur-3xl"
+            />
+            <Image
+              src="/dta-banner.jpg"
+              alt="Dream Team Apps LLC — On Demand Dream App Creations — Start Here!"
+              width={1920}
+              height={960}
+              className="relative w-full h-auto rounded-xl border-2 border-green-400/70"
+              style={{
+                boxShadow:
+                  "0 0 25px rgba(0,255,65,0.6), 0 0 70px rgba(0,255,65,0.4), 0 0 150px rgba(0,255,65,0.22)",
+              }}
+              priority
+            />
+          </div>
         </motion.div>
 
         {/* Subheadline */}
