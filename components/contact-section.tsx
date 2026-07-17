@@ -24,10 +24,19 @@ function AIChatTab() {
   const [input, setInput] = useState("")
   const [loading, setLoading] = useState(false)
   const [escalated, setEscalated] = useState(false)
-  const bottomRef = useRef<HTMLDivElement>(null)
+  const scrollAreaRef = useRef<HTMLDivElement>(null)
+  const didMount = useRef(false)
 
   useEffect(() => {
-    bottomRef.current?.scrollIntoView({ behavior: "smooth" })
+    // Auto-scroll the chat to its newest message as the conversation grows —
+    // but NOT on the first render. scrollIntoView on mount dragged the whole
+    // window down to the chat box (which sits near the bottom of the page), so
+    // every visitor landed on the footer instead of the hero. Two guards:
+    //   1. skip the initial mount entirely
+    //   2. scroll the chat's own message area, never the window
+    if (!didMount.current) { didMount.current = true; return }
+    const el = scrollAreaRef.current
+    if (el) el.scrollTo({ top: el.scrollHeight, behavior: "smooth" })
   }, [messages, loading])
 
   async function sendMessage() {
@@ -115,7 +124,7 @@ function AIChatTab() {
 
   return (
     <div className="flex flex-col h-[420px]">
-      <div className="flex-1 overflow-y-auto space-y-3 p-4">
+      <div ref={scrollAreaRef} className="flex-1 overflow-y-auto space-y-3 p-4">
         {messages.map((msg, i) => (
           <div key={i} className={`flex gap-2 ${msg.role === "user" ? "flex-row-reverse" : "flex-row"}`}>
             <div className={`w-7 h-7 rounded-none flex items-center justify-center shrink-0 mt-0.5 ${
@@ -154,7 +163,6 @@ function AIChatTab() {
             </button>
           </div>
         )}
-        <div ref={bottomRef} />
       </div>
 
       <div className="border-t border-green-500/20 p-3 flex gap-2">

@@ -11,7 +11,8 @@ export function Footer() {
     { name: "FishingPalPro", href: "/#apps" },
     { name: "PlayListAI", href: "/#apps" },
     { name: "SkinGuardAI", href: "/#apps" },
-    { name: "SiriNotes Pro", href: "/#apps" },
+    { name: "SaveNote", href: "/#apps" },
+    { name: "Search Quest", href: "/#apps" },
   ]
 
   const links = [
