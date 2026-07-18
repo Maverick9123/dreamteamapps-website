@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { ExternalLink, Terminal, Code, Mic, Search, ShieldCheck, Headphones } from "lucide-react"
+import { ExternalLink, Terminal, Code, Mic, Search, ShieldCheck, Headphones, Guitar, PartyPopper } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 
@@ -89,6 +89,40 @@ const apps = [
     status: "ONLINE",
     features: ["Hands-Free Voice Dictation", "Smart Categories", "Read-Aloud Playback", "Reminders & Calendar", "Private, On-Device"],
     appStoreUrl: "https://apps.apple.com/app/id6780697868",
+    code: "v1.1.0",
+  },
+  {
+    id: "doesitslap",
+    name: "Does It Slap?",
+    tagline: "The Pass-the-Phone Music Game",
+    description: "Everybody rates the song in secret — then the phone comes back and the room finds out whose taste actually wins. Record the reactions with the front camera and share the moment. Play with whatever music is already going.",
+    emoji: "🎉",
+    icon: PartyPopper,
+    glowColor: "rgba(255,61,165,0.3)",
+    borderColor: "border-pink-500/40",
+    accentColor: "text-pink-400",
+    badgeBg: "bg-pink-500/15 text-pink-300 border-pink-500/30",
+    badge: "PENDING REVIEW",
+    status: "PENDING",
+    features: ["Secret Round Scoring", "Reaction Video Capture", "Round Battle & Classic", "End-of-Night Awards", "Fully Offline"],
+    appStoreUrl: null,
+    code: "v1.0.0",
+  },
+  {
+    id: "gigstand",
+    name: "GigStand",
+    tagline: "The Stage Companion for Working Musicians",
+    description: "Charts, setlists, and backing tracks built for the bandstand. Offline-first by design — no signal, no problem. Big, readable charts on iPad, drag-to-order setlists, and everything where you need it mid-song.",
+    emoji: "🎸",
+    icon: Guitar,
+    glowColor: "rgba(242,168,59,0.3)",
+    borderColor: "border-amber-500/40",
+    accentColor: "text-amber-400",
+    badgeBg: "bg-amber-500/15 text-amber-300 border-amber-500/30",
+    badge: "PENDING REVIEW",
+    status: "PENDING",
+    features: ["Chords-Over-Lyrics Charts", "Drag-to-Order Setlists", "Backing Track Playback", "Stage-Readable Themes", "Works Fully Offline"],
+    appStoreUrl: null,
     code: "v1.1.0",
   },
   {

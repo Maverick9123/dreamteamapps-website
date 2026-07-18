@@ -88,6 +88,18 @@ export function SupportSection() {
                 <div className="text-gray-500 text-xs mb-1">SkinGuardAI Support</div>
                 <div className="text-teal-300 text-sm font-medium">support@dreamteamapps.com</div>
               </div>
+              <div className="bg-white/5 rounded-lg p-3">
+                <div className="text-gray-500 text-xs mb-1">Does It Slap? Support</div>
+                <div className="text-teal-300 text-sm font-medium">support@dreamteamapps.com</div>
+              </div>
+              <div className="bg-white/5 rounded-lg p-3">
+                <div className="text-gray-500 text-xs mb-1">GigStand Support</div>
+                <div className="text-teal-300 text-sm font-medium">support@dreamteamapps.com</div>
+              </div>
+              <div className="bg-white/5 rounded-lg p-3">
+                <div className="text-gray-500 text-xs mb-1">SaveNote Support</div>
+                <div className="text-teal-300 text-sm font-medium">support@dreamteamapps.com</div>
+              </div>
             </div>
             <Button
               variant="outline"
