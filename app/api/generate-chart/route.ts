@@ -1,4 +1,5 @@
 import Anthropic from '@anthropic-ai/sdk'
+import { rateGuard, clientIp } from '../../../lib/rateGuard'
 
 // Reuses the same ANTHROPIC_API_KEY already configured on Vercel for the site chat.
 const client = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY })
@@ -46,6 +47,29 @@ export async function POST(request: Request) {
           headers: { 'Content-Type': 'application/json' },
         })
       }
+    }
+
+    // Abuse guard: cap per-IP bursts and total daily Anthropic calls (the wallet
+    // trap). Fail-open — no effect until Vercel KV is connected.
+    const guard = await rateGuard(
+      'gigstand-chart',
+      clientIp(request.headers),
+      Number(process.env.CHART_IP_PER_MIN ?? 6),
+      Number(process.env.CHART_GLOBAL_PER_DAY ?? 300)
+    )
+    if (!guard.ok) {
+      return new Response(
+        JSON.stringify({
+          error:
+            guard.reason === 'global'
+              ? 'The chart assistant is busy right now. Please try again later.'
+              : 'Too many requests. Please wait a moment and try again.',
+        }),
+        {
+          status: 429,
+          headers: { 'Content-Type': 'application/json', 'Retry-After': String(guard.retryAfter) },
+        }
+      )
     }
 
     const body = await request.json()
