@@ -13,6 +13,7 @@ export function Footer() {
     { name: "SkinGuardAI", href: "/#apps" },
     { name: "SaveNote", href: "/#apps" },
     { name: "Search Quest", href: "/#apps" },
+    { name: "Does It Slap?", href: "/#apps" },
   ]
 
   const links = [

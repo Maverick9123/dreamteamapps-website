@@ -291,6 +291,7 @@ function TicketFormTab() {
                 <option value="FishingPalPro" className="bg-black">🎣 FishingPalPro</option>
                 <option value="PlayListAI" className="bg-black">🎵 PlayListAI</option>
                 <option value="SkinGuardAI" className="bg-black">🛡️ SkinGuardAI</option>
+                <option value="Does It Slap" className="bg-black">🎉 Does It Slap?</option>
               </select>
             </div>
           </div>

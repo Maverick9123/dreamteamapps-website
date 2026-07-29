@@ -102,10 +102,10 @@ const apps = [
     borderColor: "border-pink-500/40",
     accentColor: "text-pink-400",
     badgeBg: "bg-pink-500/15 text-pink-300 border-pink-500/30",
-    badge: "PENDING REVIEW",
-    status: "PENDING",
+    badge: "LIVE // App Store",
+    status: "ONLINE",
     features: ["Secret Round Scoring", "Reaction Video Capture", "Round Battle & Classic", "End-of-Night Awards", "Fully Offline"],
-    appStoreUrl: null,
+    appStoreUrl: "https://apps.apple.com/us/app/does-it-slap/id6792324070",
     code: "v1.0.0",
   },
   {
